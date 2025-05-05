@@ -11,11 +11,17 @@ const backgrounds = {
     "Twitch": "Photo/Twitch.jpg"
 };
 
-// Activation du système de scroll
 window.addEventListener("scroll", () => {
-    texts.forEach((text) => text.classList.remove("active"));
+    texts.forEach((text) => text.classList.remove("active", "fade-out"));
     index = Math.min(Math.floor(window.scrollY / window.innerHeight), texts.length - 1);
     texts[index].classList.add("active");
+
+    // Effet de disparition progressive pour les textes précédents
+    texts.forEach((text, i) => {
+        if (i < index) {
+            text.classList.add("fade-out");
+        }
+    });
 
     // Changement fluide de l'image de fond
     const currentText = texts[index].textContent;
