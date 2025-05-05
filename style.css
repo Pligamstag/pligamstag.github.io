@@ -31,7 +31,7 @@ main {
     background: url('Photo/YTB.jpg') center/cover no-repeat fixed;
 }
 
-content-section:nth-child(3) {
+.content-section:nth-child(3) {
     background: url('Photo/TikTok.jpg') center/cover no-repeat fixed;
 }
 
@@ -70,6 +70,12 @@ content-section:nth-child(5) {
 
 /* 🔥 Adaptation pour mobile 🔥 */
 @media screen and (max-width: 768px) {
+    body {
+        background-size: contain; /* Évite que l'image soit trop grande */
+        background-position: center; /* Centre correctement l’image */
+        background-attachment: fixed; /* Assure que le fond reste bien positionné */
+    }
+
     #branding {
         font-size: 32px;
         left: 50%;
@@ -90,6 +96,10 @@ content-section:nth-child(5) {
 }
 
 @media screen and (max-width: 480px) {
+    body {
+        background-size: contain;
+    }
+
     #branding {
         font-size: 24px;
     }
