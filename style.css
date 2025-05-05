@@ -1,3 +1,4 @@
+/* Style général */
 body {
     margin: 0;
     padding: 0;
@@ -7,13 +8,14 @@ body {
     overflow-y: scroll;
 }
 
-/* Ajout du scroll vertical */
+/* Scroll vertical */
 main {
-    height: 500vh; /* Augmente artificiellement la hauteur de la page */
+    height: 500vh; /* Assure le défilement */
 }
 
+/* Sections */
 .content-section {
-    min-height: 100vh; /* Chaque section prend toute la hauteur de l'écran */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,4 +24,77 @@ main {
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Fond statique des différentes sections */
+.content-section:nth-child(2) {
+    background: url('Photo/YTB.jpg') center/cover no-repeat fixed;
+}
+
+content-section:nth-child(3) {
+    background: url('Photo/TikTok.jpg') center/cover no-repeat fixed;
+}
+
+content-section:nth-child(4) {
+    background: url('Photo/Insta.jpg') center/cover no-repeat fixed;
+}
+
+content-section:nth-child(5) {
+    background: url('Photo/Twitch.jpg') center/cover no-repeat fixed;
+}
+
+/* Effet de disparition progressive */
+.logo-text {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.logo-text.fade-out {
+    opacity: 0;
+}
+
+/* Style des boutons */
+.button-link {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button-link:hover {
+    background: #ffcc00;
+    color: black;
+}
+
+/* 🔥 Adaptation pour mobile 🔥 */
+@media screen and (max-width: 768px) {
+    #branding {
+        font-size: 32px;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .content-section {
+        padding: 20px;
+        font-size: 24px;
+    }
+
+    .button-link {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #branding {
+        font-size: 24px;
+    }
+
+    .content-section {
+        font-size: 20px;
+    }
 }
